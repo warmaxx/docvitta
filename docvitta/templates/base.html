@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'assets/images/fav-icon.png' %}">
+    {% block page_css %}
+    <link rel="stylesheet" href="{% static 'assets/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/superclasses.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/mobile.css' %}">
+    {% endblock %}
+</head>
+<body>
+<!--&lt;!&ndash; Preloader &ndash;&gt;-->
+<!--    <div class="loader-mask">-->
+<!--        <div class="loader">-->
+<!--            <div></div>-->
+<!--            <div></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash; Preloader &ndash;&gt;-->
+{% include 'header.html' %}
+
+
+{% include 'scrolltop.html' %}
+{% block content %}{% endblock %}
+
+{% include 'footer.html' %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Клиника "Доктор Витта"{% endblock %}
+{% block content %}
+<!-- BANNER SECTION -->
+    <section class="w-100 float-left banner-con position-relative">
+        <div class="wrapper2">
+            <div class="banner-inner-box position-relative">
+                <div class="banner-inner-con">
+                    <div class="banner-title">
+                        <h1 data-aos="fade-up" data-aos-duration="700">Клиника
+                            Доктор
+                            Витта</h1>
+                        <p data-aos="fade-up" data-aos-duration="700">Забота - наше призвание.
+                            Изменить систему здравоохранения к лучшему.
+                            Мы здесь на всю жизнь.
+                            Будьте здоровы!.</p>
+                        <div class="banner-btn d-flex align-items-center" data-aos="fade-up" data-aos-duration="700">
+                            <a href="https://docvitta.infoclinica.ru/login">Записаться на консультацию</a>
+                            <a href="https://docvitta.infoclinica.ru/login">
+                                <figure class="mb-0 d-flex align-items-center justify-content-center">
+                                    <img src="{% static 'assets/images/top-arrow.png' %}" alt="top-arrow">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="banner-details d-flex position-relative">
+                        <figure class="mb-0">
+                            <img src="{% static 'assets/images/doctor-img.png' %}" alt="doctor-img">
+                        </figure>
+<!--                        <div class="banner-details-txt">-->
+<!--                            <p data-aos="fade-up" data-aos-duration="700">Duis aute irure dolor in reprehenderit in-->
+<!--                                voluptate velit-->
+<!--                                esse cillum dolore eu fugiat nulla pariatur excepteur sint-->
+<!--                                occaecat cupidatat non proident.</p>-->
+<!--                            <div class="banner-static-box">-->
+<!--                                <ul class="mb-0 list-unstyled">-->
+<!--                                    <li class="d-flex align-items-center justify-content-center" data-aos="fade-up"-->
+<!--                                        data-aos-duration="700">-->
+<!--                                        <figure class="mb-0 d-flex align-items-center justify-content-center">-->
+<!--                                            <img src="{% static 'assets/images/thumb-icon.png' %}" alt="thumb-icon">-->
+<!--                                        </figure>-->
+<!--                                        <div class="banner-static-txt">-->
+<!--                                            <div class="static-value">98%</div>-->
+<!--                                            <span class="d-block">Positive Reviews</span>-->
+<!--                                            <span class="d-block">From Our Clients</span>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+<!--                                    <li class="d-flex align-items-center justify-content-end" data-aos="fade-up"-->
+<!--                                        data-aos-duration="700">-->
+<!--                                        <figure class="mb-0 d-flex align-items-center justify-content-center">-->
+<!--                                            <img src="{% static 'assets/images/experienced-icon.png' %}" alt="experienced-icon">-->
+<!--                                        </figure>-->
+<!--                                        <div class="banner-static-txt">-->
+<!--                                            <div class="static-value">38+</div>-->
+<!--                                            <span class="d-block">Experienced Doctors</span>-->
+<!--                                            <span class="d-block">Our Treatment Office</span>-->
+<!--                                        </div>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="client-review d-flex align-items-center">-->
+<!--                            <div class="d-flex align-items-center review-img">-->
+<!--                                <figure class="mb-0">-->
+<!--                                    <img src="{% static 'assets/images/review-img1.jpg' %}" alt="review-img">-->
+<!--                                </figure>-->
+<!--                                <figure class="mb-0">-->
+<!--                                    <img src="{% static 'assets/images/review-img2.jpg' %}" alt="review-img">-->
+<!--                                </figure>-->
+<!--                                <figure class="mb-0">-->
+<!--                                    <img src="{% static 'assets/images/review-img3.jpg' %}" alt="review-img">-->
+<!--                                </figure>-->
+<!--                            </div>-->
+<!--                            <div class="review-txt">-->
+<!--                                <span>4.9</span>-->
+<!--                                <figure class="mb-0 d-inline-block">-->
+<!--                                    <img src="{% static 'assets/images/star-img.png' %}" alt="star-img">-->
+<!--                                </figure>-->
+<!--                                <span class="d-block">32k Total Reviews</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BANNER SECTION -->
+<!-- SERVICE SECTION -->
+    <section class="w-100 float-left service-con padding-top padding-bottom">
+        <div class="container">
+            <h2 class="pb-5">Наши услуги</h2>
+            <div class="service-box">
+                {% for dep in departaments %}
+                <div class="service-box-item" data-aos="fade-up" data-aos-duration="700">
+                    <figure>
+                        <img src="{{dep.icon.url}}" alt="psychiatry-icon" width="73px">
+                    </figure>
+                    <h4>{{dep.name}}</h4>
+                    <p>{{dep.description}}</p>
+                    <a href="#">Подробнее<i class="fas fa-angle-right"></i></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- SERVICE SECTION -->
+<!-- ABOUT SECTION -->
+    <section class="w-100 float-left about-con design-img padding-top padding-bottom position-relative">
+        <div class="wrapper3">
+            <div class="about-box" data-aos="fade-up" data-aos-duration="700">
+                <div class="about-box-img">
+                    <div class="vedio-img position-relative">
+                        <div class="vedio-sub-img">
+                            <img class="thumb poster-con index1-poster" src="{% static 'assets/images/about-img1.jpg' %}"
+                                alt="vedio-img">
+                            <img class="thumb poster-con index1-poster" src="{% static 'assets/images/about-img2.jpg' %}"
+                                alt="vedio-img">
+                            <img class="thumb poster-con index1-poster" src="{% static 'assets/images/about-img3.jpg' %}"
+                                alt="vedio-img">
+                        </div>
+                        <div class="btn-outer">
+                            <a href="javascript:void(0)" onclick="lightbox_open();">
+                                <div class="video-wrap">
+                                    <img src="{% static 'assets/images/play-icon.png' %}" alt="play-icon">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-box-title" data-aos="fade-up" data-aos-duration="700">
+                    <span class="d-block sub-txt">О клинике</span>
+                    <h2>Витта Компани &
+                        ВиттаМед</h2>
+                    <p>Группа компаний "Витта" с 1900 года занимается развитием доступного здравоохранения. В Витта занимаются оптовым розничным аптечным опеспечением, опеспечением государственных больниц и госпиталей медикаментами и расходыми принадлежностями, а также продвижением доступными для населения аптеками "Диалог" и клиниками "ДокторВитта".</p>
+                    <div class="generic-list">
+                        <ul class="list-unstyled mb-0">
+                            <li>Monthly Checkups</li>
+                            <li>Caring Medical Team</li>
+                            <li>Proactive and Fast Results</li>
+                        </ul>
+                        <ul class="list-unstyled mb-0">
+                            <li>Cosmetic Filling</li>
+                            <li>Dental X-Ray</li>
+                            <li>Complete Crown</li>
+                        </ul>
+                    </div>
+                    <div class="generic-btn">
+                        <a href="{% url 'homepage:about' %}">
+                            Подробнее
+                        </a>
+                        <a href="{% url 'homepage:about' %}">
+                            <figure class="mb-0">
+                                <img src="{% static 'assets/images/long-arrow.png' %}" alt="long-arrow">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="light">
+            <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+            <iframe src="https://www.youtube.com/embed/kNXMJBQ6oL4" allowfullscreen=""></iframe>
+        </div>
+
+        <div id="fade1" onClick="lightbox_close();"></div>
+    </section>
+    <!-- ABOUT SECTION -->
+{% include 'getintouch.html' %}
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+    <script src="{% static 'assets/js/aos.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.js' %}"></script>
+    <script src="{% static 'assets/js/contact-form.js' %}"></script>
+    <script>
+        $(window).on('load', function(){
+        // Preloader
+        $('.loader').fadeOut();
+        $('.loader-mask').delay(350).fadeOut('slow');
+        });
+    </script>
+    <script>
+        var btn = $('#button');
+
+         $(window).scroll(function() {
+           if ($(window).scrollTop() > 300) {
+           btn.addClass('show');
+         }
+          else {
+           btn.removeClass('show');
+         }
+         });
+         btn.on('click', function(e) {
+         e.preventDefault();
+         $('html, body').animate({scrollTop:0}, '300');
+       });
+    </script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $('#owl-carouselone').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 10000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+        $('#owl-carouseltwo').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 10000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+    <script>
+        AOS.init();
+        function lightbox_open() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            //   window.scrollTo(0, 0);
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade1').style.display = 'block';
+            lightBoxVideo.play();
+        }
+
+        function lightbox_close() {
+            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade1').style.display = 'none';
+            lightBoxVideo.pause();
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            var counters = $(".count");
+            var countersQuantity = counters.length;
+            var counter = [];
+
+            for (i = 0; i < countersQuantity; i++) {
+                counter[i] = parseInt(counters[i].innerHTML);
+            }
+
+            var count = function (start, value, id) {
+                var localStart = start;
+                setInterval(function () {
+                    if (localStart < value) {
+                        localStart++;
+                        counters[id].innerHTML = localStart;
+                    }
+                }, 40);
+            }
+
+            for (j = 0; j < countersQuantity; j++) {
+                count(0, counter[j], j);
+            }
+        });
+
+
+
+        $('.count').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 3300,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    </script>
+{% endblock %}
