@@ -524,6 +524,10 @@ a.item-link{margin-top: 10px; display: inline-block}
 .text-size-14{
 	font-size: 15px;
 }
+.text-size-13{
+	font-size: 13px;
+	font-family: 'Montserrat', sans-serif;
+}
 .blogpage-section .blog-box .button-portion .calendar-ml {
     font-size: 22px;
     color: var(--button-color);

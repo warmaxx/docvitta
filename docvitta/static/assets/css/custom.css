@@ -9,7 +9,8 @@
 body {
     font-size: 18px;
     line-height: 27px;
-    color: var(--text-color);
+    /*color: var(--text-color);*/
+    color: var(--secondary-color);
     font-family: 'Montserrat';
 }
 /* header section styling start */
@@ -109,7 +110,7 @@ body {
 /* banner section styling start */
 .banner-con {
     padding-top: 147px;
-    background: var(--secondary--color) url(../images/graphic-img.png) no-repeat;
+    background: #00b533 url(../images/graphic-img.png) no-repeat;
     background-size: cover;
 }
 
@@ -1384,7 +1385,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .doctor-img-con {
-    background: url(../images/doctors-img.png) no-repeat center;
+    background: url(../images/doctors-img4.png) no-repeat center;
     width: 566px;
     height: 530px;
     position: absolute;

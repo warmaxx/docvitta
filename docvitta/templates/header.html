@@ -18,23 +18,22 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle p-0" href="{% url 'homepage:about' %}" id="navbarDropdown32" role="button"
+                            <a class="nav-link dropdown-toggle p-0"  id="navbarDropdown32" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Клиника
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown32">
                                 <ul class="list-unstyled mb-0">
+                                    <li><a class="dropdown-item" href="{% url 'homepage:about' %}">О нас</a></li>
                                     <li><a class="dropdown-item" href="{% url 'homepage:vacancy' %}">Вакансии</a></li>
-                                    <li><a class="dropdown-item" href="https://www.mofoms.ru/fond/subekty-i-uchastniki.php">Сведения о ТФОМС</a></li>
-                                    <li><a class="dropdown-item" href="https://yandex.ru/maps/org/doktor_vitta/86760931983/reviews/?add-review=true">Отзывы</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'homepage:doctors' %}">Врачи</a></li>
+                                    <li><a class="dropdown-item" href="https://www.mofoms.ru/fond/subekty-i-uchastniki.php" target="_blank">Сведения о ТФОМС</a></li>
+                                    <li><a class="dropdown-item" href="https://yandex.ru/maps/org/doktor_vitta/86760931983/reviews/?add-review=true" target="_blank">Отзывы</a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link p-0" href="{% url 'homepage:about' %}">Отделения</a>
-                        </li>
                         <li class="nav-item">
-                            <a class="nav-link p-0" href="{% url 'homepage:doctors' %}">Врачи</a>
+                            <a class="nav-link p-0" href="https://docvitta.infoclinica.ru/" target="_blank">Личный кабинет</a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -44,13 +43,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
                                 <ul class="list-unstyled mb-0">
-                                    <li><a class="dropdown-item" href="https://docvitta.infoclinica.ru/pricelist">Платные услуги</a></li>
-                                    <li><a class="dropdown-item" href="/page/4/">Способы оплаты</a></li>
-                                    <li><a class="dropdown-item" href="/page/2/">Правила записи на первичный прием</a></li>
-                                    <li><a class="dropdown-item" href="/page/6/">Лекарственное обеспечение</a></li>
-                                    <li><a class="dropdown-item" href="/page/1/">Политика обработки перс. данных</a></li>
-                                    <li><a class="dropdown-item" href="/page/5/">Территориальная программа госгарантий</a></li>
-                                    <li><a class="dropdown-item" href="/page/3/">Порядок оказания платных медицинских услуг</a></li>
+                                    <li><a class="dropdown-item" href="https://docvitta.infoclinica.ru/pricelist" target="_blank">Платные услуги</a></li>
                                     <li><a class="dropdown-item" href="/article/">Статьи</a></li>
                                 </ul>
                             </div>
