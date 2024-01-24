@@ -33,6 +33,15 @@ def doctors(request):
     }
     return render(request, 'homepage/doctors.html', context=context)
 
+def doctor(request, id):
+    doctor = get_object_or_404(Employee, id=id)
+    employees = Employee.objects.all().exclude(id=id)
+    context = {
+        'doctor': doctor,
+        'employees':employees,
+    }
+    return render(request, 'homepage/doctor.html', context=context)
+
 
 def vacancy(request):
     vacancies = Vacancy.objects.all()

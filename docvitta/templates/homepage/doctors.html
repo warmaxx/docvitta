@@ -29,7 +29,7 @@
             <div class="team-members-con">
                 <ul class="list-unstyled mb-0">
                     {% for empl in employees %}
-                    <li class="text-center">
+                    <li class="text-center" ><a href="/doctors/{{ empl.id }}/">
                         <figure data-aos="fade-up" data-aos-duration="700">
                             <img src="{{ empl.photo.url }}" alt="team-img1">
                         </figure>
@@ -49,7 +49,7 @@
 <!--                                </li>-->
                             </ul>
                         </div>
-                    </li>
+                    </a></li>
                     {% endfor %}
                 </ul>
             </div>
