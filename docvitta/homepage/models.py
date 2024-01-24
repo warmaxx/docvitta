@@ -31,6 +31,14 @@ class Page(models.Model):
     def __str__(self):
         return self.name
 
+class Article(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Заголовок статьи')
+    image = models.ImageField(upload_to='images/pages/', verbose_name='Изображение', null=True, blank=True)
+    text = RichTextField(verbose_name='Контент статьи')
+
+    def __str__(self):
+        return self.name
+
 
 class Vacancy(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название вакансии')

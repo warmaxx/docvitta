@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Клиника "Доктор Витта - {{ article.name }}"{% endblock %}
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/aos.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom-style.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/special-classes.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/superclasses.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/css/mobile.css'%}">
+{% endblock %}
+{% block content %}
+    <!-- BANNER SECTION -->
+    <section class="w-100 float-left sub-banner-con position-relative">
+        <div class="wrapper2">
+            <div class="sub-banner-inner-box banner-inner-box position-relative text-center w-100 float-left">
+                <h1 data-aos="fade-up" data-aos-duration="700">{{ article.name }}</h1>
+                <p data-aos="fade-up" data-aos-duration="700"><br>
+                    </p>
+            </div>
+        </div>
+    </section>
+    <!-- BANNER SECTION -->
+    <!-- Single Blog -->
+    <section class="singleblog-section blogpage-section w-100 float-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                    <div class="main-box">
+                        <figure class="image1" data-aos="fade-up" data-aos-duration="700">
+                            {% if article.image.url is not null %}<img src="{{ article.image.url }}" alt="" class="img-fluid">{% endif %}
+                        </figure>
+                        <div class="content1">
+                            <h4 data-aos="fade-up" data-aos-duration="700"></h4>
+                            <i class="fas fa-user" data-aos="fade-up" data-aos-duration="700"></i>
+
+                            <p class="text-size-14" data-aos="fade-up" data-aos-duration="700">{{ article.text|safe }}
+                            </p>
+                            <div class="generic-list">
+                                <ul class="list-unstyled mb-0 aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
+                                    {% for vac in vacancies %}
+                                    <li><a href="{{vac.pk}}/">{{vac.name}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 column">
+                    <div class="box1 box2">
+                        <h5 data-aos="fade-up" data-aos-duration="700">Статьи</h5>
+                        <ul class="list-unstyled mb-0 float-left">
+                            {% for art in articles %}
+                            <li class="text-size-14" data-aos="fade-up" data-aos-duration="700"><a
+                                    href="/article/{{ art.id }}/">{{ art.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% include 'socnetworks.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--blog-sec-->
+
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js'%}"></script>
+    <script src="{% static 'assets/js/popper.min.js'%}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'assets/js/owl.carousel.js'%}"></script>
+    <script src="{% static 'assets/js/contact-form.js'%}"></script>
+    <script src="{% static 'assets/js/jquery.validate.js'%}"></script>
+    <script src="{% static 'assets/js/aos.js'%}"></script>
+    <script>
+        $(window).on('load', function(){
+        // Preloader
+        $('.loader').fadeOut();
+        $('.loader-mask').delay(350).fadeOut('slow');
+        });
+    </script>
+    <script>
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            }
+            else {
+                btn.removeClass('show');
+            }
+        });
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+    </script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                margin: 10,
+                nav: true,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            })
+        })
+        // ****************//
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+        // ****************//
+        $(document).ready(function () {
+            startAnimation();
+            function startAnimation() {
+                jQuery('.skills').each(function () {
+
+                    jQuery(this).find('.skillbar').animate({
+                        width: jQuery(this).attr('data-percent')
+                    }, 6000);
+
+                });
+            }
+        });
+    </script>
+{% endblock %}

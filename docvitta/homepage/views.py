@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from homepage.models import Departament, Employee, Vacancy, Page
+from homepage.models import Departament, Employee, Vacancy, Page, Article
 
 
 # Create your views here.
@@ -52,10 +52,24 @@ def vacancy_info(request, id):
 def page(request, id):
     page = get_object_or_404(Page, pk=id)
     pages = Page.objects.all().exclude(id=id)
-    context = {'page': page, 'pages':pages,}
+    context = {'page': page, 'pages': pages, }
     return render(request, 'homepage/page.html', context=context)
 
 
 def rules(request):
     context = {}
     return render(request, 'homepage/rules.html', context=context)
+
+
+def articles(request):
+    articles = Article.objects.all()
+    pages = Page.objects.all()
+    context = {'articles': articles, 'pages': pages}
+    return render(request, 'homepage/articles.html', context=context)
+
+
+def article(request, id):
+    article = get_object_or_404(Article, pk=id)
+    articles = Article.objects.all().exclude(id=id)
+    context = {'article': article, 'articles': articles}
+    return render(request, 'homepage/article.html', context=context)
