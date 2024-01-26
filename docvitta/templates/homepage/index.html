@@ -28,58 +28,6 @@
                         <figure class="mb-0 pl-5">
                             <img src="{% static 'assets/images/doctor-img4.png' %}" alt="doctor-img">
                         </figure>
-<!--                        <div class="banner-details-txt">-->
-<!--                            <p data-aos="fade-up" data-aos-duration="700">Duis aute irure dolor in reprehenderit in-->
-<!--                                voluptate velit-->
-<!--                                esse cillum dolore eu fugiat nulla pariatur excepteur sint-->
-<!--                                occaecat cupidatat non proident.</p>-->
-<!--                            <div class="banner-static-box">-->
-<!--                                <ul class="mb-0 list-unstyled">-->
-<!--                                    <li class="d-flex align-items-center justify-content-center" data-aos="fade-up"-->
-<!--                                        data-aos-duration="700">-->
-<!--                                        <figure class="mb-0 d-flex align-items-center justify-content-center">-->
-<!--                                            <img src="{% static 'assets/images/thumb-icon.png' %}" alt="thumb-icon">-->
-<!--                                        </figure>-->
-<!--                                        <div class="banner-static-txt">-->
-<!--                                            <div class="static-value">98%</div>-->
-<!--                                            <span class="d-block">Positive Reviews</span>-->
-<!--                                            <span class="d-block">From Our Clients</span>-->
-<!--                                        </div>-->
-<!--                                    </li>-->
-<!--                                    <li class="d-flex align-items-center justify-content-end" data-aos="fade-up"-->
-<!--                                        data-aos-duration="700">-->
-<!--                                        <figure class="mb-0 d-flex align-items-center justify-content-center">-->
-<!--                                            <img src="{% static 'assets/images/experienced-icon.png' %}" alt="experienced-icon">-->
-<!--                                        </figure>-->
-<!--                                        <div class="banner-static-txt">-->
-<!--                                            <div class="static-value">38+</div>-->
-<!--                                            <span class="d-block">Experienced Doctors</span>-->
-<!--                                            <span class="d-block">Our Treatment Office</span>-->
-<!--                                        </div>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="client-review d-flex align-items-center">-->
-<!--                            <div class="d-flex align-items-center review-img">-->
-<!--                                <figure class="mb-0">-->
-<!--                                    <img src="{% static 'assets/images/review-img1.jpg' %}" alt="review-img">-->
-<!--                                </figure>-->
-<!--                                <figure class="mb-0">-->
-<!--                                    <img src="{% static 'assets/images/review-img2.jpg' %}" alt="review-img">-->
-<!--                                </figure>-->
-<!--                                <figure class="mb-0">-->
-<!--                                    <img src="{% static 'assets/images/review-img3.jpg' %}" alt="review-img">-->
-<!--                                </figure>-->
-<!--                            </div>-->
-<!--                            <div class="review-txt">-->
-<!--                                <span>4.9</span>-->
-<!--                                <figure class="mb-0 d-inline-block">-->
-<!--                                    <img src="{% static 'assets/images/star-img.png' %}" alt="star-img">-->
-<!--                                </figure>-->
-<!--                                <span class="d-block">32k Total Reviews</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -119,13 +67,6 @@
                             <img class="thumb poster-con index1-poster" src="{% static 'assets/images/about-img3.jpg' %}"
                                 alt="vedio-img">
                         </div>
-<!--                        <div class="btn-outer">-->
-<!--                            <a href="javascript:void(0)" onclick="lightbox_open();">-->
-<!--                                <div class="video-wrap">-->
-<!--                                    <img src="{% static 'assets/images/play-icon.png' %}" alt="play-icon">-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                        </div>-->
                     </div>
                 </div>
                 <div class="about-box-title" data-aos="fade-up" data-aos-duration="700">
@@ -159,10 +100,6 @@
                 </div>
             </div>
         </div>
-        <div id="light">
-            <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
-            <iframe src="https://www.youtube.com/embed/kNXMJBQ6oL4" allowfullscreen=""></iframe>
-        </div>
 
         <div id="fade1" onClick="lightbox_close();"></div>
     </section>
@@ -175,7 +112,6 @@
     <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'assets/js/popper.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
     <script src="{% static 'assets/js/aos.js' %}"></script>
     <script src="{% static 'assets/js/jquery.validate.js' %}"></script>
     <script src="{% static 'assets/js/contact-form.js' %}"></script>
@@ -244,62 +180,5 @@
                 }
             }
         })
-    </script>
-    <script>
-        AOS.init();
-        function lightbox_open() {
-            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
-            //   window.scrollTo(0, 0);
-            document.getElementById('light').style.display = 'block';
-            document.getElementById('fade1').style.display = 'block';
-            lightBoxVideo.play();
-        }
-
-        function lightbox_close() {
-            var lightBoxVideo = document.getElementById("VisaChipCardVideo");
-            document.getElementById('light').style.display = 'none';
-            document.getElementById('fade1').style.display = 'none';
-            lightBoxVideo.pause();
-        }
-    </script>
-    <script>
-        $(document).ready(function () {
-
-            var counters = $(".count");
-            var countersQuantity = counters.length;
-            var counter = [];
-
-            for (i = 0; i < countersQuantity; i++) {
-                counter[i] = parseInt(counters[i].innerHTML);
-            }
-
-            var count = function (start, value, id) {
-                var localStart = start;
-                setInterval(function () {
-                    if (localStart < value) {
-                        localStart++;
-                        counters[id].innerHTML = localStart;
-                    }
-                }, 40);
-            }
-
-            for (j = 0; j < countersQuantity; j++) {
-                count(0, counter[j], j);
-            }
-        });
-
-
-
-        $('.count').each(function () {
-            $(this).prop('Counter', 0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 3300,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        });
     </script>
 {% endblock %}
