@@ -14,7 +14,8 @@ class Departament(models.Model):
 
 class Employee(models.Model):
     name = models.CharField(max_length=100, verbose_name='ФИО')
-    departament = models.ForeignKey(Departament, on_delete=models.CASCADE, verbose_name='Отделение', null=True, blank=True)
+    departament = models.ForeignKey(Departament, on_delete=models.CASCADE, verbose_name='Отделение', null=True,
+                                    blank=True)
     photo = models.ImageField(upload_to='images/photos/', verbose_name='Фото', null=True, blank=True)
     job = models.CharField(max_length=100, verbose_name='Должность', default='')
     info = RichTextField(verbose_name='Информация об образовании и аккредитации', default='')
@@ -31,6 +32,7 @@ class Page(models.Model):
     def __str__(self):
         return self.name
 
+
 class Article(models.Model):
     name = models.CharField(max_length=100, verbose_name='Заголовок статьи')
     image = models.ImageField(upload_to='images/pages/', verbose_name='Изображение', null=True, blank=True)
@@ -43,6 +45,17 @@ class Article(models.Model):
 class Vacancy(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название вакансии')
     text = RichTextField(verbose_name='Описание вакансии')
+
+    def __str__(self):
+        return self.name
+
+
+class Sale(models.Model):
+    name = models.CharField(max_length=300, verbose_name='Название')
+    text = RichTextField(verbose_name='Описание', blank=True, null=True)
+    image = models.ImageField(upload_to='images/sales/', verbose_name='Изображение', null=True, blank=True)
+    file = models.FileField(upload_to='images/sales/', verbose_name='Описание акции', null=True, blank=True)
+    active = models.BooleanField(default=True, verbose_name='Активность')
 
     def __str__(self):
         return self.name

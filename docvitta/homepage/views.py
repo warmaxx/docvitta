@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404
-from homepage.models import Departament, Employee, Vacancy, Page, Article
+from homepage.models import Departament, Employee, Vacancy, Page, Article, Sale
 
 
 # Create your views here.
 def index(request):
     departaments = Departament.objects.all()
+    sales = Sale.objects.all()
     context = {
         'departaments': departaments,
+        'sales': sales,
     }
     return render(request, 'homepage/index.html', context=context)
 

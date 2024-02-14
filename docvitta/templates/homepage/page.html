@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Клиника "Доктор Витта - {{ page.name }}"{% endblock %}
+    {% block description %}
+    <meta name="description" content="Медицинская клиника Доктор Вита предлагает высококачественные медицинские услуги и профессиональную помощь. Мы заботимся о вашем здоровье."/>
+    {% endblock %}
 {% block page_css %}
     <link rel="stylesheet" href="{% static 'assets/bootstrap/bootstrap.min.css'%}">
     <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css'%}">

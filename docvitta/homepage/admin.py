@@ -1,5 +1,5 @@
 from django.contrib import admin
-from homepage.models import Departament, Employee, Page, Vacancy, Article
+from homepage.models import Departament, Employee, Page, Vacancy, Article, Sale
 
 
 # Register your models here.
@@ -23,6 +23,8 @@ class ArticleAdmin(admin.ModelAdmin):
 
 class VacancyAdmin(admin.ModelAdmin):
     list_display = ('name',)
+class SaleAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
 
 admin.site.register(Departament, DepartamentAdmin)
@@ -30,3 +32,4 @@ admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(Page, PageAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(Vacancy, VacancyAdmin)
+admin.site.register(Sale, SaleAdmin)

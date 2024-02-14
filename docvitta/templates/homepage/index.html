@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Клиника "Доктор Витта"{% endblock %}
+    {% block description %}
+    <meta name="description" content="Медицинская клиника Доктор Витта - забота о вашем здоровье. Профессиональные врачи, современное оборудование, широкий спектр услуг. Запишитесь на прием сейчас!"/>
+    {% endblock %}
 {% block content %}
 <!-- BANNER SECTION -->
     <section class="w-100 float-left banner-con position-relative">
@@ -103,6 +106,9 @@
 
         <div id="fade1" onClick="lightbox_close();"></div>
     </section>
+<!-- Sales -->
+{% include 'sales.html' %}
+<!-- end sales -->
     <!-- ABOUT SECTION -->
 {% include 'getintouch.html' %}
 {% endblock %}
@@ -113,6 +119,7 @@
     <script src="{% static 'assets/js/popper.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/aos.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
     <script src="{% static 'assets/js/jquery.validate.js' %}"></script>
     <script src="{% static 'assets/js/contact-form.js' %}"></script>
     <script>
