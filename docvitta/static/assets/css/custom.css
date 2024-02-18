@@ -7,11 +7,11 @@
 }
 
 body {
-    font-size: 18px;
+    /*font-size: 18px;*/
     line-height: 27px;
     /*color: var(--text-color);*/
     color: var(--secondary-color);
-    font-family: 'Montserrat';
+    /*font-family: 'Montserrat';*/
 }
 /* header section styling start */
 .header-con {

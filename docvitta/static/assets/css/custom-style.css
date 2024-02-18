@@ -516,7 +516,7 @@ a.item-link{margin-top: 10px; display: inline-block}
 .blogpage-section .blog-box .button-portion .button{
 	display: inline-block;
 	text-align: right;
-	width: 48%;
+	width: 100%;
 }
 .blogpage-section .blog-box .button-portion span {
     color: var(--text-color);
@@ -600,8 +600,8 @@ a.item-link{margin-top: 10px; display: inline-block}
     margin-right: 10px;
 }
 .singleblog-section .main-box .content1 p{
-    font-weight: 600;
-    margin-bottom: 35px;
+    /*font-weight: 600;*/
+    /*margin-bottom: 35px;*/
 }
 .singleblog-section .main-box .content2{
     background: var(--e-global-color-bright-blue);
@@ -1481,7 +1481,7 @@ a.item-link{margin-top: 10px; display: inline-block}
 .blogpage-section .blog-box .lower-portion {padding: 20px;}
 .blogpage-section .blog-box .button-portion {padding: 12px 0 12px 20px;}
 .blogpage-section .blog-box .button-portion .date {width: 49.5%;}
-.blogpage-section .blog-box .button-portion .button {width: 48.5%;}
+.blogpage-section .blog-box .button-portion .button {width: 100%;}
 .blogpage-section .blog-box .lower-portion i {font-size: 16px; margin-right: 5px; margin-bottom: 20px;}
 .blogpage-section .blog-box .button-portion .calendar-ml {font-size: 18px; margin-left: 0;}
 .blogpage-section .blog-box .lower-portion .text-mr {margin-right: 15px;}
@@ -1675,7 +1675,7 @@ a.item-link{margin-top: 10px; display: inline-block}
 .blogpage-section .blog-box .lower-portion {padding: 20px;}
 .blogpage-section .blog-box .lower-portion i {margin: 0 8px 8px 0;}
 .blogpage-section .blog-box .button-portion .date {width: 48.5%;}
-.blogpage-section .blog-box .button-portion .button {width: 49%;}
+.blogpage-section .blog-box .button-portion .button {width: 100%;}
 .blogpage-section .blog-box .button-portion .calendar-ml {font-size: 15px;}
 .blogpage-section .blog-box .lower-portion .text-size-14 {font-size: 15px; line-height: 20px;}
 .blogpage-section .blog-box .button-portion .text-size-14 {font-size: 15px; line-height: 20px;}

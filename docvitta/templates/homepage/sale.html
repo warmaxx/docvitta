@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Клиника "Доктор Витта" - {{ doctor.name }}{% endblock %}
-
+{% block title %}Клиника "Доктор Витта" - Акция {{ sale.name }}{% endblock %}
+    {% block description %}
+    <meta name="description" content="Медицинская клиника Доктор Вита предлагает высококачественные медицинские услуги и профессиональную помощь. Мы заботимся о вашем здоровье."/>
+    {% endblock %}
 {% block page_css %}
     <link rel="stylesheet" href="{% static 'assets/bootstrap/bootstrap.min.css'%}">
     <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css'%}">
@@ -12,21 +14,15 @@
     <link rel="stylesheet" href="{% static 'assets/css/superclasses.css'%}">
     <link rel="stylesheet" href="{% static 'assets/css/custom.css'%}">
     <link rel="stylesheet" href="{% static 'assets/css/mobile.css'%}">
-    <style>
-        td, th {
-      padding: 10px;
-    }
-    </style>
 {% endblock %}
 {% block content %}
-
-
     <!-- BANNER SECTION -->
     <section class="w-100 float-left sub-banner-con position-relative">
         <div class="wrapper2">
             <div class="sub-banner-inner-box banner-inner-box position-relative text-center w-100 float-left">
-                <h1 data-aos="fade-up" data-aos-duration="700">{{ doctor.name }}</h1>
-                <p data-aos="fade-up" data-aos-duration="700"> {{ doctor.departament }}</p>
+                <h1 data-aos="fade-up" data-aos-duration="700">{{ sale.name }}</h1>
+                <p data-aos="fade-up" data-aos-duration="700"><br>
+                    </p>
             </div>
         </div>
     </section>
@@ -37,27 +33,25 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                     <div class="main-box">
-                        <div class="content5">
-                            <figure class="singleblog-review1 mb-0" data-aos="fade-up" data-aos-duration="700">
-                                <img src="{{ doctor.photo.url }}" alt="" class="img-fluid" width="132px">
-                            </figure>
-                            <div class="content">
-                                <h4 data-aos="fade-up" data-aos-duration="700">{{ doctor.name }}</h4>
-                                <span class="text-size-16" data-aos="fade-up" data-aos-duration="700">{{ doctor.job }}</span>
-                                <div style="text-align: justify; th, td {padding: 15px;}" >
-                                    <div class="" data-aos="fade-up" data-aos-duration="700">{{ doctor.info|safe }}</div>
-                                </div>
-                            </div>
+                        <figure class="image1" data-aos="fade-up" data-aos-duration="700">
+                            {% if sale.image.url is not null %}<img src="{{ sale.image.url }}" alt="" class="img-fluid">{% endif %}
+                        </figure>
+                        <div class="content1">
+                            <h4 data-aos="fade-up" data-aos-duration="700">{{ sale.name }}</h4>
+                            <i class="fas fa-user" data-aos="fade-up" data-aos-duration="700"></i>
+
+                            <p class="" data-aos="fade-up" data-aos-duration="700">{{ sale.text|safe }}
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 col-12 column">
                     <div class="box1 box2">
-                        <h5 data-aos="fade-up" data-aos-duration="700">Специалисты</h5>
+                        <h5 data-aos="fade-up" data-aos-duration="700">Другие акции</h5>
                         <ul class="list-unstyled mb-0">
-                            {% for empl in employees %}
+                            {% for sale in sales %}
                             <li class="text-size-16" data-aos="fade-up" data-aos-duration="700"><a
-                                    href="/doctors/{{ empl.id }}">{{ empl.name }}</a></li>
+                                    href="{% url 'homepage:sale' id=sale.id %}">{{sale.name}}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -71,8 +65,6 @@
     <script src="{% static 'assets/js/jquery-3.6.0.min.js'%}"></script>
     <script src="{% static 'assets/js/popper.min.js'%}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'assets/js/humbleScroll.js'%}"></script>
-    <script src="{% static 'assets/js/main.js'%}"></script>
     <script src="{% static 'assets/js/contact-form.js'%}"></script>
     <script src="{% static 'assets/js/jquery.validate.js'%}"></script>
     <script src="{% static 'assets/js/aos.js'%}"></script>
@@ -80,7 +72,7 @@
         $(window).on('load', function(){
         // Preloader
         $('.loader').fadeOut();
-        $('.loader-mask').delay(350).fadeOut('slow');
+        $('.loader-mask').delay(50).fadeOut('slow');
         });
     </script>
     <script>
