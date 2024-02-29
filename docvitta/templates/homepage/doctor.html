@@ -39,7 +39,7 @@
                     <div class="main-box">
                         <div class="content5">
                             <figure class="singleblog-review1 mb-0" data-aos="fade-up" data-aos-duration="700">
-                                <img src="{{ doctor.photo.url }}" alt="" class="img-fluid" width="132px">
+                                {% if doctor.photo %} <img src="{{ doctor.photo.url }}" alt="" class="img-fluid" width="132px"> {% endif %}
                             </figure>
                             <div class="content">
                                 <h4 data-aos="fade-up" data-aos-duration="700">{{ doctor.name }}</h4>
