@@ -17,7 +17,7 @@
 {% endblock %}
 {% block content %}
     <!-- BANNER SECTION -->
-    <section class="w-100 float-left sub-banner-con position-relative">
+    <section class="w-100 float-left sub-banner-con position-relative" style="max-height: 120px; background: url({% static 'assets/images/sub-banner-bg-img2.jpg' %}) no-repeat center;">
         <div class="wrapper2">
             <div class="sub-banner-inner-box banner-inner-box position-relative text-center w-100 float-left">
                 <h1 data-aos="fade-up" data-aos-duration="700">{{ page.name }}</h1>
@@ -30,6 +30,10 @@
     <!-- Single Blog -->
     <section class="singleblog-section blogpage-section w-100 float-left">
         <div class="container">
+            <div class="generic-title text-center">
+                <h2 class="mb-0" data-aos="fade-up" data-aos-duration="700">{{ page.name }}</h2>
+                <span class="d-block sub-txt" data-aos="fade-up" data-aos-duration="700"></span>
+            </div>
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-12">
                     <div class="main-box">
@@ -37,8 +41,8 @@
                             {% if page.image.url is not null %}<img src="{{ page.image.url }}" alt="" class="img-fluid">{% endif %}
                         </figure>
                         <div class="content1">
-                            <h4 data-aos="fade-up" data-aos-duration="700">{{ page.name }}</h4>
-                            <i class="fas fa-user" data-aos="fade-up" data-aos-duration="700"></i>
+<!--                            <h4 data-aos="fade-up" data-aos-duration="700">{{ page.name }}</h4>-->
+<!--                            <i class="fas fa-user" data-aos="fade-up" data-aos-duration="700"></i>-->
 
                             <p class="text-size-14" data-aos="fade-up" data-aos-duration="700">{{ page.text|safe }}
                             </p>
