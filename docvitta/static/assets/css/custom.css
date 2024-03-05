@@ -1989,7 +1989,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .category-box>figure img {
     width: 255px;
-    height: 205px;
+    height: 255px;
     object-fit: cover;
     transition: .3s ease-in-out;
 }

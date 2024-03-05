@@ -59,3 +59,12 @@ class Sale(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Partner(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Название')
+    image = models.ImageField(upload_to='images/partners/', verbose_name='Логотип', null=True, blank=True)
+    url = models.URLField(verbose_name='Ссылка на партнера', null=True, blank=True)
+
+    def __str__(self):
+        return self.name

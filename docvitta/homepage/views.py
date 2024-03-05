@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from homepage.models import Departament, Employee, Vacancy, Page, Article, Sale
+from homepage.models import Departament, Employee, Vacancy, Page, Article, Sale, Partner
 
 
 # Create your views here.
@@ -98,6 +98,14 @@ def sale(request, id):
     sales = Sale.objects.all().exclude(id=id)
     context = {
         'sale': sale,
-        'sales':sales,
+        'sales': sales,
     }
     return render(request, 'homepage/sale.html', context=context)
+
+
+def partners(request):
+    partners = Partner.objects.all()
+    context = {
+        'partners': partners,
+    }
+    return render(request, 'homepage/partners.html', context=context)
