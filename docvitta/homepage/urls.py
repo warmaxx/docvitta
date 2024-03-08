@@ -28,4 +28,5 @@ urlpatterns = [
     path('sales/', views.sales, name='sales'),
     path('sales/<int:id>/', views.sale, name='sale'),
     path('partners/', views.partners, name='partners'),
+    path('form_anketa/', views.form_anketa, name='form_anketa'),
 ]
