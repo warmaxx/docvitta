@@ -142,7 +142,8 @@ body {
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
-    color: var(--white-color);
+    /*color: var(--white-color);*/
+    color: rgb(225 69 18);
     transition: .4s ease-in-out;
 }
 
@@ -162,7 +163,8 @@ body {
     width: 65px;
     height: 65px;
     border-radius: 50%;
-    border: 1px solid var(--white-color);
+    /*border: 1px solid var(--white-color);*/
+    border: 1px solid rgb(225 69 18);
 }
 
 .banner-btn {
