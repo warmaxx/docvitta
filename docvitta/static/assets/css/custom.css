@@ -173,7 +173,7 @@ body {
 }
 
 .banner-details>figure {
-    margin-left: -180px;
+    /*margin-left: -180px;*/
 }
 
 .banner-details-txt p {
@@ -308,7 +308,7 @@ body {
     width: 330px;
     height: 183px;
     position: absolute;
-    background: url(../images/box-shape-img1.png) no-repeat;
+    /*background: url(../images/box-shape-img1.png) no-repeat;*/
 }
 
 .banner-con:after {
