@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+
+from docvitta import settings
 from homepage.models import Departament, Employee, Vacancy, Page, Article, Sale, Partner
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
@@ -122,11 +124,14 @@ def form_anketa(request):
     # print(answers)
     email_title = 'Анкета посетителя с сайта docvitta.ru'
     msg_html = render_to_string('homepage/email_anketa.html', {'answers': answers})
-    # send_mail(
-    #     email_title,
-    #     msg_html,
-    #     'info@docvitta.ru',
-    #     ['info@docvitta.ru'],
-    #     html_message=msg_html,
-    # )
+    send_mail(
+        email_title,
+        msg_html,
+        settings.DEFAULT_FROM_EMAIL,
+        [
+            # 'info@docvitta.ru',
+            'Maksyagin.Aleksey@vitta.ru',
+        ],
+        html_message=msg_html,
+    )
     return render(request, 'homepage/form_anketa_send.html')

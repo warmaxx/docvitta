@@ -1,9 +1,13 @@
 <html>
 <body>
-Анкета посетителя<br>
+<h2>Анкета посетителя сайта Docvitta.ru</h2><br>
 <br>
-{% for a in answers %}
-<p>a</p><br>
-{% endfor %}
+<ul>
+    {% for answer in answers %}
+    <li>{{ answer }}</li>
+    <br>
+    {% endfor %}
+</ul>
+
 </body>
 </html>
