@@ -129,8 +129,8 @@ def form_anketa(request):
         msg_html,
         settings.DEFAULT_FROM_EMAIL,
         [
-            # 'info@docvitta.ru',
-            'Maksyagin.Aleksey@vitta.ru',
+            'info@docvitta.ru',
+            # 'Maksyagin.Aleksey@vitta.ru',
         ],
         html_message=msg_html,
     )
