@@ -4,6 +4,9 @@ from docvitta import settings
 from homepage.models import Departament, Employee, Vacancy, Page, Article, Sale, Partner
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
+import datetime
+
+
 # Create your views here.
 def index(request):
     departaments = Departament.objects.all()
@@ -88,7 +91,8 @@ def article(request, id):
 
 
 def sales(request):
-    sales = Sale.objects.all()
+    date = datetime.date.today()
+    sales = Sale.objects.filter(date_start__lte=date).filter(date_end__gte=date).filter(active=True).order_by('-id')
     context = {
         'sales': sales,
     }
@@ -97,6 +101,9 @@ def sales(request):
 
 def sale(request, id):
     sale = get_object_or_404(Sale, id=id)
+    date = datetime.date.today()
+    if (sale.date_start > date) or (sale.date_end <= date) or (sale.active == False):
+        return redirect('homepage:sales')
     sales = Sale.objects.all().exclude(id=id)
     context = {
         'sale': sale,

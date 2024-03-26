@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-
+from datetime import date
 
 # Create your models here.
 class Departament(models.Model):
@@ -56,7 +56,8 @@ class Sale(models.Model):
     image = models.ImageField(upload_to='images/sales/', verbose_name='Изображение', null=True, blank=True)
     file = models.FileField(upload_to='images/sales/', verbose_name='Описание акции', null=True, blank=True)
     active = models.BooleanField(default=True, verbose_name='Активность')
-
+    date_start = models.DateField(blank=True, default=date.today())
+    date_end = models.DateField(blank=True, default=date.today())
     def __str__(self):
         return self.name
 
